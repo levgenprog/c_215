@@ -3,8 +3,6 @@ defmodule Mapsum do
     0
   end
   def mapsum([head | tail], func) do
-    func_res = func.(head)
-    sum_tail = mapsum(tail, func)
-    _ = func_res + sum_tail
+    func.(head) + mapsum(tail, func)
   end
 end
